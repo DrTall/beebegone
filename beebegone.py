@@ -11,11 +11,14 @@ you've put in some data but not enough to give a safe day.
 Setup:
 1. pip install google-api-python-client
 2. Follow instructions in secrets.py.
-3. Run ./beebegone.py and authorize the app in the web browser. Future runs
-won't require human interaction as long as you save your gmail.storage
+3. Run ./beebegone.py in a working directory it can write to (for caching
+the Gmail credentials) and authorize the app in the web browser. Future runs
+won't require human interaction unless you delete your gmail.storage
 credentials.
+4. Set up a cron job to run this script periodically (optional, but not
+very useful otherwise).
 
-Example Usage:
+Example Usage (in a working directory you can write to):
 ./beebegone.py
 """
 
