@@ -130,4 +130,4 @@ for thread_id in thread_ids_to_archive:
   print 'Archiving thread (id=%s)' % thread_id
   thread = GMAIL_SERVICE.users().threads().modify(
       userId='me', id=thread_id, body={'removeLabelIds': ['INBOX']}).execute()
-print 'Done! Archived %s email(s).' % len(thread_ids_to_archive)
+print 'Done! Archived %s email(s) at %s.' % (len(thread_ids_to_archive), datetime.datetime.now())
