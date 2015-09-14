@@ -55,7 +55,7 @@ BEEMINDER_SUBJECT_RE = (
     r'(?P<month>\d\d)/(?P<day>\d\d) \(.*\).*respond with beeminder data')
 
 BEEMINDER_ZENO_SUBJECT_RE = (
-    r'Eep! .* in 0 days for (?P<username>\w+)/(?P<goalname>\w+) \(\$\d+\)'
+    r'Eep! .* at \d\d:\d\d(am|pm) for (?P<username>\w+)/(?P<goalname>\w+) \(\$\d+\)'
 )
 
 thread_ids_to_archive = []
