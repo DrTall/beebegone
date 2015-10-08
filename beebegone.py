@@ -55,7 +55,7 @@ BEEMINDER_SUBJECT_RE = (
     r'(?P<month>\d\d)/(?P<day>\d\d) \(.*\).*respond with beeminder data')
 
 BEEMINDER_ZENO_SUBJECT_RE = (
-    r'Eep! .* in 0 days for (?P<username>\w+)/(?P<goalname>\w+) \(\$\d+\)'
+    r'Eep! .* at \d\d:\d\d(am|pm) for (?P<username>\w+)/(?P<goalname>\w+) \(\$\d+\)'
 )
 
 thread_ids_to_archive = []
@@ -130,4 +130,4 @@ for thread_id in thread_ids_to_archive:
   print 'Archiving thread (id=%s)' % thread_id
   thread = GMAIL_SERVICE.users().threads().modify(
       userId='me', id=thread_id, body={'removeLabelIds': ['INBOX']}).execute()
-print 'Done! Archived %s email(s).' % len(thread_ids_to_archive)
+print 'Done! Archived %s email(s) at %s.' % (len(thread_ids_to_archive), datetime.datetime.now())
